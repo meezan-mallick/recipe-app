@@ -3,17 +3,19 @@
         <div class="row form-group">
             <div class="col-sm-5">
                 <label for="">Name</label>
-                <input  class="form-control" type="text">
+                <input  class="form-control" type="text" #nameInput>
             </div>
             <div class="col-sm-2">
                 <label for="">Amount</label>
-                <input class="form-control" type="number">
+                <input class="form-control" type="number" #amountInput>
             </div>
            
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <button class="btn btn-primary">Add Item</button>
+                <button class="btn btn-success" (click)="onAdd()">Add</button>
+                <button class="btn ml-2 btn-danger">Delete</button>
+                <button class="btn ml-2 btn-primary">Clear</button>
             </div>
         </div>
         

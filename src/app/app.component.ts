@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-app';
+
+  loadedFeature:string = "recipe";
+
+  onNavigate(selected: string) {
+    this.loadedFeature=selected;
+    // alert("hi"+selected);
+  }
 }
+
+
