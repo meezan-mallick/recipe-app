@@ -1,9 +1,9 @@
-<li   class="list-group-item d-flex justify-content-between align-items-center">
-    <a (click)="recipeSelected()" style="cursor: pointer;" class="text-dark">
+<li routerLinkActive="active"   class="list-group-item  d-flex justify-content-between align-items-center">
+    <a  routerLink={{id}} style="cursor: pointer;" class=".myactive text-dark">
     <div class="p-2">
         <h4 class="list-group-item-heading">{{recipe.name}}</h4>
         <p class="list-group-item-text">{{recipe.short_description}}</p>
-
+       
     </div>
 </a>
     <div>

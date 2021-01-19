@@ -3,15 +3,18 @@
         <h5>List of recipes</h5>
     </div>
     <div class="col-6 col-md-4 ">
-        <button class="btn btn-primary">Add Recipe</button>
+        <a routerLink="new">
+        <button  class="btn btn-primary">Add Recipe</button>
+    </a>
     </div>
 
 </div>
 <hr>
 <div class="row">
     <ul class="list-group">
-        <app-recipe-item *ngFor="let recipeEle of recipes" 
+        <app-recipe-item *ngFor="let recipeEle of recipes;let i = index" 
         [recipe]="recipeEle" 
+        [id]="i"
         ></app-recipe-item>
 
     </ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from "../recipe.model";
 import { RecipeService } from '../recipe.service';
 @Component({
@@ -8,16 +9,18 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
-  // recipes:Recipe = new Recipe("Milkshake","tasty milkshake","https://imge.jpg")
   recipes:Recipe[];
    
   constructor(private recipeService : RecipeService) {
     this.recipes = recipeService.getRecipe();
    }
 
+  
+
   ngOnInit(): void {
   }
 
   
+ 
 
 }
