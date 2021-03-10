@@ -13,11 +13,20 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('amountInput',{static:false}) amountInputRef : ElementRef;
 
 
-  constructor(private shlservice: ShoppingListService ) { }
+  constructor(private shlservice: ShoppingListService ) {
+    
+   }
 
   ngOnInit(): void {
   }
 
+  
+  onDelete()
+  {
+    // this.shlservice.addIngredient(new ingredients("meezan",20));
+    // console.log(this.shlservice.getIngredient());
+    // console.log("btn clicked")
+  }
 
   onAdd()
   {
