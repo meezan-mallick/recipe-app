@@ -1,2 +1,68 @@
-<p>recipe-edit works!</p>
-<h5>{{editMode}}</h5>
+<div class="container bg-light">
+    <form [formGroup]="recipeForm" (ngSubmit)="onsubmit()">
+    <div class="row text-right">
+        <div class="col-8  p-3">
+
+            <h4 class="text-left">{{editMode?'Update Recipe':'Add Recipe'}}</h4>
+        </div>
+        <div class="col-4 p-3">
+            <button class="btn mr-2 btn-success">Save</button>
+            <button class="btn btn-primary">Cancel</button>
+        </div>
+    </div>
+
+    <div class="row text-left">
+        <div class="col-12">
+            <div class="form-group pl-3 pr-3">
+                <label for="name">Name</label>
+                <input formControlName="name" type="text" id="name" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-group pl-3 pr-3">
+                <label for="imgPath">Image Path</label>
+                <input formControlName="imgPath" type="text" id="imgPath" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class=" pl-3 pr-3">
+                <label for="imgpathpreview">Image Preview</label>
+                <img src="" id="imgpathpreview" alt="" class="img-responsive" srcset="">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-group pl-3 pr-3">
+                <label for="description">Description</label>
+                <textarea formControlName="recipeDesc" type="text" id="description" class="form-control" rows="6"></textarea>
+            </div>
+        </div>
+
+        <div formArrayName="ingredients" class="col-12">
+            <label for="ing">Ingredients</label>
+            <div *ngFor="let ingredientctrl of recipeForm.get('ingredients'); let i = index" [formGroupName]="i"   class="pl-3 pr-3">
+                <div id="ing" class="row">
+                    <div class="col-8">
+
+                        <input type="text" formControlName="name" class="form-control">
+                    </div>
+
+                    <div class="col-2">
+
+                        <input type="number" formControlName="amount" class="form-control">
+                    </div>
+                    <div class="col-2">
+
+                        <button class="btn btn-danger">X</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+</div>

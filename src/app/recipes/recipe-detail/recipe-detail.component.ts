@@ -19,8 +19,18 @@ export class RecipeDetailComponent implements OnInit {
       (param:Params) =>{
         this.id = +param["id"];
         this.recipe = this.recipeService.getRecipeid(this.id);
+        // console.log(this.recipe.ingredientsArray)
       }
     );
+  }
+
+  onAddToShoppingList(){
+    this.recipeService.addIngredientToShoppingList(this.recipe.ingredientsArray);
+    // alert(this.recipe.ingredientsArray);
+  }
+
+  onDelete(){
+    
   }
 
 }
